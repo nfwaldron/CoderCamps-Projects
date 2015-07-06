@@ -13,7 +13,7 @@ namespace ConsoleApplication1
             // Create an new instance of the class Random(), and name it randNumber
             var randNumber = new Random();
 
-            // Assign the 
+            // Perform the .Next() method on the randNumber object
             var number = randNumber.Next(10);
             
             
