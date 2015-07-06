@@ -12,6 +12,7 @@ namespace DisplayCurrentTime
         {
             var time = DateTime.Now.ToShortTimeString();
             Console.WriteLine("The time is " + time);
+
             Console.ReadLine();
         }
     }
