@@ -10,8 +10,15 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            // Create an new instance of the class Random(), and name it randNumber
+            var randNumber = new Random();
+
+            // Assign the 
+            var number = randNumber.Next(10);
+            
+            
             //Output information to the screen
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Your random number is " + number);
 
             //Receive input from the user
             Console.ReadLine();
