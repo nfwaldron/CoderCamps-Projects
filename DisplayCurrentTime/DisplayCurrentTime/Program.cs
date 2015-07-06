@@ -16,12 +16,5 @@ namespace DisplayCurrentTime
 
             Console.ReadLine();
         }
-
-        static int DivideNumbers(int num1, int num2)
-        {
-            Debug.Assert(num2 != 0, "Cannot Divide By Zero");
-
-            return num1 / num2;
-        }
     }
 }
