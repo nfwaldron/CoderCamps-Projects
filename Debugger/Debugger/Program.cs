@@ -14,6 +14,7 @@ namespace Debugger
             var a = 8;
             var b = 0;
 
+            // Debug.Assert() checks a condition, and if the condition is false, outputs a message to the user
             Debug.Assert(b != 0, "b can't be zero!");
 
             var result = a / b;
