@@ -20,7 +20,8 @@ namespace OOP1
         // public decimal CalculateTax( decimal taxRate = 0.08m, decimal discount = 2.00m)
         public decimal CalculateTax( decimal taxRate = 0.08m, decimal discount = 2.00m)
         {
-            // The this keyword points to the 
+            // The this keyword refers to the current instance of the class.
+            // It essentially acts as a placeholder, that references to the object itself
             return this.Price + (this.Price * taxRate - discount);
         }
 

@@ -23,8 +23,6 @@ namespace OOP1
                 Price = 3.50m
             };
 
-            // display the name and tax
-
             // Named arguements in C# allow you to label the arguements
             var tax = eggs.CalculateTax(taxRate:0.08m, discount:0.0m);
             Console.WriteLine("Tax is " + tax.ToString("c"));
