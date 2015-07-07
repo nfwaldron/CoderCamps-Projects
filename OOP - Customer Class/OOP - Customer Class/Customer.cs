@@ -12,7 +12,9 @@ namespace OOP___Customer_Class
         public string LastName { get; set; }
         
         // Use input validation to ensure that the user cannot set an age that is less than zero for instances of the Customer class.
+        
         // Private variables are usually named _propertyName
+        // The private property _age is the hidden field that will be set using the set method public int Age 
         private int _age;
 
         public int Age

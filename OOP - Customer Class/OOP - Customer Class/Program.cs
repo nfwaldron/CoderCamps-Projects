@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// Create a customer class and add the following properties to the class. First Name, Last Name, Age, Birthdayte. Ensure that you are
+// Create a customer class and add the following properties to the class. First Name, Last Name, Age, Birthdate. Ensure that you are
 // using the right data types for each property.
 namespace OOP___Customer_Class
 {
@@ -14,6 +14,7 @@ namespace OOP___Customer_Class
         static void Main(string[] args)
         {
             // Local variables are in camelCase.
+            // The following method of object instantiation is the method recommended by Steve Walther.
             var sally = new Customer
             {
                 FirstName = "Sally",
@@ -21,6 +22,7 @@ namespace OOP___Customer_Class
                 BirthYear = 2028,
                 Age = 23
             };
+
             Debug.Assert(sally.Age == 23, "Sally is 23");
 
             var mike = new Customer
