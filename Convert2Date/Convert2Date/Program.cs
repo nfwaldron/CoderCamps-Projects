@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Convert2Date
@@ -10,6 +11,8 @@ namespace Convert2Date
     {
         static void Main(string[] args)
         {
+            // Enter the current date.
+
             Console.WriteLine("Please enter the current date. The required format is mm/dd/yyyy: ");
             
             var date = Console.ReadLine();
@@ -18,7 +21,21 @@ namespace Convert2Date
 
             Console.WriteLine( "The date is " + dateTime.ToString("D"));
 
-            Console.ReadLine();
+            Console.WriteLine("Enter a decimal: ");
+
+            // Check to see if a number is a decimal
+
+            var number = Console.ReadLine();
+
+            var isNumber = Regex.IsMatch(number, @"\d+");
+
+            // String Builder
+
+            var stringBuilder = new StringBuilder();
+            for (var i = 0; i < 100; i++)
+            {
+                stringBuilder.Append("Hello World");
+            }
 
 
         }
