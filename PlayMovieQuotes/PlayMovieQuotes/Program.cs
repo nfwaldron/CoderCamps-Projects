@@ -27,7 +27,7 @@ namespace PlayMovieQuotes
             // Create a new instance of the Random() object
             var rand = new Random();
 
-            // Use the .Next method which returns a non-negative random integer that is less than the specified maximum. 
+            // Use the .Next method which returns a non-negative random integer that is less than the specified maximum. AKA n-1. 
             // Use .Next on the rand object, passing as a parameter the length of stringArray using .Length
             var i = rand.Next(stringArray.Length);
 
@@ -36,10 +36,10 @@ namespace PlayMovieQuotes
             // Create a new object of the class SoundPlayer(). 
             // The arguement passed to the object is the URL of the .wav file, which is stored in the array stringArray.
             // The variable 'i' stands for both a randomly generated number, and a reference to an index in the array.
-            using (var player = new SoundPlayer(stringArray[i])) 
-            {
-                player.PlaySync(); // Plays the .wav file and loads the .wav file first if it has not been loaded.
-            }
+            var player = new SoundPlayer(stringArray[i]);  
+            
+            player.PlaySync(); // Plays the .wav file and loads the .wav file first if it has not been loaded.
+            
         }
     }
 }
