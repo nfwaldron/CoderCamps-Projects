@@ -21,9 +21,11 @@ namespace CC_Day_One_Practice
             //Converts string representation of date and time to its System.DateTime equivalent 
             var dateTime = DateTime.Parse(userInput);
 
-            //Convert to a strin
+            //Convert current System.DateTime object to its equivalent long date string representation.
 
             Console.WriteLine("The date is " + dateTime.ToLongDateString());
+
+
 
 
             
