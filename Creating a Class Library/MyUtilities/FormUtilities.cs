@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyUtilities
 {
-    internal class FormUtilities
+    public class FormUtilities
     {
             public string CleanInput(string input)
             {

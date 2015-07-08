@@ -13,9 +13,9 @@ namespace Creating_a_Class_Library
         {
             var utility = new FormUtilities();
 
-            var cleanName = utility.CleanInput("  StEPheN WALthEr ");
+            //var cleanName = utility.CleanInput("  StEPheN WALthEr ");
 
-            Console.WriteLine(cleanName);
+            Console.WriteLine("   AlICe".CleanInput());
             Console.ReadLine();
         }
     }

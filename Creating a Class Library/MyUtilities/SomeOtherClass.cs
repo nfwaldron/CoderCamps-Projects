@@ -8,6 +8,9 @@ namespace MyUtilities
 {
     class SomeOtherClass
     {
-        
+        public void DoSomething()
+        {
+            var utility = new FormUtilities();
+        }
     }
 }
