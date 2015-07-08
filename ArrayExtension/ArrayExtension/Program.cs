@@ -19,8 +19,6 @@ namespace ArrayExtension
             Console.WriteLine(headlines.GetRandom());
             Console.ReadLine();
 
-            
-
         }
     }
 }
