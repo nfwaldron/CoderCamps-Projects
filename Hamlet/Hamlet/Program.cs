@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,11 +14,15 @@ namespace Hamlet
         static void Main(string[] args)
         {
             // Create a string variable that stored the URL of the Hamlet text file.
+            //Absolute Verbatum
             string hamletTxtPath = @"c:\Users\Nathan\Desktop\CoderCamps Projects\Hamlet\Hamlet\Hamlet.txt";
 
             // The try-catch statement consists of a try block followed by one or more catch clauses,
             // which specify handlers for different exceptions.
-            // Use this method to ensure proper reading of the file.  
+            // Use this method to ensure proper reading of the file. 
+ 
+            //
+            // OPTIONAL because of small text file
             try
             {
                 using (StreamReader sr = new StreamReader(hamletTxtPath))
@@ -31,6 +36,8 @@ namespace Hamlet
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
+            //
+            //
 
             // Utilize the File.ReadALlText() method to open a text file, read all lines of the file, and then close the file.
             // This method returns a string which is stored in the variable read text.
@@ -47,25 +54,13 @@ namespace Hamlet
              * If the answer is no, we add a new element in the dictionary with a value of 1. 
              * If the answer is yes – we increase the old value of the element by one, 
              * so as to count the last occurrence.
-             * 
-             * In order to remove the 'boring' words from the text, create an array of characters that you
-             * want to be stripped from the text
              */
-
-           /* ???? //In order to remove the 'boring' words from the text, create an array of characters that you
-            //want to be stripped from the text
-            string[] stripChars = { "the", "a", "an", "for" };
-
-            //For every item in stripChars, read through the Hamlet text stored in readText, and replace
-            // it with a space.
-            foreach (string character in stripChars)
-            {
-                readText = readText.Replace(character, " ");
-            }
-            */
+ 
+            // In order to split the 
+            var wordList = Regex.Split(readText, @"\b");
 
             // Split on spaces into a List of strings
-			List<string> wordList = readText.Split(' ').ToList();
+			//   List<string> wordList = readText.Split(' ').ToList();
  
 
             // Create a object of the class Dictionary.The key arguement is a string which represents the word occurence, and the 
@@ -89,10 +84,12 @@ namespace Hamlet
      
             }
 
+            
             foreach (KeyValuePair<string, int> pair in dictionary)
             {
-                Console.WriteLine("{0}, {1}",pair.Key, pair.Value);
+                Console.WriteLine("Word:{0} | Value:{1}", pair.Key, pair.Value);    
             }
+             
              
         }
     }

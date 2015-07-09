@@ -12,23 +12,21 @@ namespace OrgChart
         // Class Properties
         public string Name { get; set; }
         public string Position { get; set; }
-        public int ReportCount { get; set; }
 
-        // Class Methods
+        // You could create a list of Employees to represent the relationship between employees
+        public List<Employee> Report { get; set; }
 
-        // This constructor with parameters ensures that objects of the class Employee cannot be created without providing
-        // the necessary information upon onject instantiation.
-        public Employee(string name, string position, int reportcount)
+        // Read Only Property. Setter, and private property removed
+        public int ReportCount
         {
-            this.Name = name;
-            this.Position = position;
-            this.ReportCount = reportcount;
+            get { return this.Report.Count; }     
         }
 
-        public void Log()
+        public Employee()
         {
-            Console.WriteLine("Employee Name: {0}, Employee Position: {1} Employees Overseen: {2}", this.Name, this.Position, this.ReportCount);
+            this.Report = new List<Employee>();
         }
 
+       
     }
 }

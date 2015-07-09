@@ -18,36 +18,47 @@ namespace OrgChart
 {
     class Program
     {
+        static void DisplayOrgChart(Employee employee, int level = 0)
+        {
+            //indent
+            for (var i = 0; i < level; i++)
+            {
+                Console.Write("---");
+            }
+
+            //SHow Name and report count
+            Console.WriteLine("{0} has the following {1} reports:", employee.Name, employee.ReportCount);
+
+            //Show reports
+            level++;
+
+            foreach (var report in employee.Report)
+            {
+                DisplayOrgChart(report, level);
+            }
+
+        }
+
+
         static void Main(string[] args)
         {
             //Create Employees
-            var bill = new Employee("Bill Gates", "Senior Developer", 4);
-            var sam = new Employee("Sam", "Mid-Level Developer", 0);
-            var fred = new Employee("Fred", "Mid-Level Developer", 1);
-            var jane = new Employee("Jane", "Mid-Level Developer", 0);
-            var alice = new Employee("Alice", "Junior-Level Developer", 0);
-
-            //Create collection List to hold employees
-            var employeeList = new List<Employee>();
-
-            //I had to comment out my constructor w/ parameter in order for this to work. Is there a way to 
-            // initialize an object here without commenting out the constructor with parameter in the class .cs file?
-
-            // Add Employee objects to the collection list
-            employeeList.Add(bill);
-            employeeList.Add(sam);
-            employeeList.Add(fred);
-            employeeList.Add(jane);
-            employeeList.Add(alice);
-
-            // The for each item (Employee object) in the strongly typed List employee list, perform the .Log() function on the item  
-            //
-            foreach (var item in employeeList)
+            var bill = new Employee
             {
-                // Every item in the list, perform the .Log() method. 
-                item.Log();
-            }
+                Name = "Bill Gates",
+                Report = new List<Employee>{
+                    new Employee {Name = "Sam"},
+                    new Employee {Name = "Fred",
+                                  Report = new List<Employee>{
+                                      new Employee{Name = "Alice"}
+                                  }
+                                  },
+                    new Employee {Name = "Jane"}
+                }
+            };
 
+            DisplayOrgChart(bill);
+            Console.ReadLine();
 
         }
     }
