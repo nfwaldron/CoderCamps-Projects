@@ -36,6 +36,50 @@ namespace Hamlet
             // This method returns a string which is stored in the variable read text.
             string readText = File.ReadAllText(hamletTxtPath);
 
+            /* For the task of sorting the We can use the different words in the text for keys, 
+             * and the value for each key would be the number of occurrences for each word in our text.
+             * 
+             * The algorithm for counting the words is the following: we read the text word by word. 
+             * For each word we check if it already exists in the dictionary. 
+             * If the answer is no, we add a new element in the dictionary with a value of 1. 
+             * If the answer is yes – we increase the old value of the element by one, 
+             * so as to count the last occurrence.
+             * 
+             * In order to remove the 'boring' words from the text, create an array of characters that you
+             * want to be stripped from the text
+             */
+
+            //In order to remove the 'boring' words from the text, create an array of characters that you
+            //want to be stripped from the text
+            string[] stripChars = { "the", "a", "an", "for" };
+
+            //For every item in stripChars, read through the Hamlet text stored in readText, and replace
+            // it with a space.
+            foreach (string character in stripChars)
+            {
+                readText = readText.Replace(character, " ");
+            }
+
+            // Create a object of the class Dictionary.The key arguement is a string which represents the word occurence, and the 
+            // value is an int which represents the amount of times the key is encountered.
+            var wordCounter = new Dictionary<string, int>();
+
+            foreach (string word in readText)
+            {
+                if (wordCounter.ContainsKey(word))
+                {
+                    wordCounter[word]++;
+                }
+
+                else
+                {
+                    wordCounter[word] = 1;
+                }
+            }
+
+
+
+
 
             
         }
