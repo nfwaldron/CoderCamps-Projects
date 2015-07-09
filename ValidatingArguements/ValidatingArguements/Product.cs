@@ -32,7 +32,6 @@ namespace ValidatingArguements
             {
                 throw new ArgumentOutOfRangeException("Value is outside of the acceptable range");
             }
-
                 return this.Price + (this.Price * taxRate);
             
         }
