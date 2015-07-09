@@ -49,7 +49,7 @@ namespace Hamlet
              * want to be stripped from the text
              */
 
-            //In order to remove the 'boring' words from the text, create an array of characters that you
+           /* ???? //In order to remove the 'boring' words from the text, create an array of characters that you
             //want to be stripped from the text
             string[] stripChars = { "the", "a", "an", "for" };
 
@@ -59,25 +59,42 @@ namespace Hamlet
             {
                 readText = readText.Replace(character, " ");
             }
+            */
+
+            // Split on spaces into a List of strings
+			List<string> wordList = readText.Split(' ').ToList();
+ 
 
             // Create a object of the class Dictionary.The key arguement is a string which represents the word occurence, and the 
             // value is an int which represents the amount of times the key is encountered.
-            var wordCounter = new Dictionary<string, int>();
+            var dictionary = new Dictionary<string, int>();
 
-            foreach (string word in readText)
+            foreach (string word in wordList)
             {
-                if (wordCounter.ContainsKey(word))
+                // In order to remove the boring letters from the text...
+                // If the length of the word is at least three letters...
+                if (word.Length >= 3)
                 {
-                    wordCounter[word]++;
-                }
-
-                else
-                {
-                    wordCounter[word] = 1;
+                    // ...check if the dictionary already has the word.
+                    if (dictionary.ContainsKey(word))
+                    {
+                        // If we already have the word in the dictionary, increment the count of how many times it appears
+                        dictionary[word]++;
+                    }
+                    else
+                    {
+                        // Otherwise, if it's a new word then add it to the dictionary with an initial count of 1
+                        dictionary[word] = 1;
+                    }
                 }
             }
 
-
+            foreach (var item in dictionary)
+            {
+               
+            }
+ 
+            
 
 
 
