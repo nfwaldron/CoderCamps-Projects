@@ -36,6 +36,9 @@ namespace Hamlet
             // This method returns a string which is stored in the variable read text.
             string readText = File.ReadAllText(hamletTxtPath);
 
+            // Convert to lowercase
+            readText = readText.ToLower();
+
             /* For the task of sorting the We can use the different words in the text for keys, 
              * and the value for each key would be the number of occurrences for each word in our text.
              * 
@@ -71,10 +74,7 @@ namespace Hamlet
 
             foreach (string word in wordList)
             {
-                // In order to remove the boring letters from the text...
-                // If the length of the word is at least three letters...
-                if (word.Length >= 3)
-                {
+                
                     // ...check if the dictionary already has the word.
                     if (dictionary.ContainsKey(word))
                     {
@@ -86,19 +86,14 @@ namespace Hamlet
                         // Otherwise, if it's a new word then add it to the dictionary with an initial count of 1
                         dictionary[word] = 1;
                     }
-                }
+     
             }
 
-            foreach (var item in dictionary)
+            foreach (KeyValuePair<string, int> pair in dictionary)
             {
-               
+                Console.WriteLine("{0}, {1}",pair.Key, pair.Value);
             }
- 
-            
-
-
-
-            
+             
         }
     }
 }
