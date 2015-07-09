@@ -56,7 +56,7 @@ namespace Hamlet
              * so as to count the last occurrence.
              */
  
-            // In order to split the 
+            // In order to split the string according to character
             var wordList = Regex.Split(readText, @"\b");
 
             // Split on spaces into a List of strings
@@ -87,6 +87,8 @@ namespace Hamlet
             
             foreach (KeyValuePair<string, int> pair in dictionary)
             {
+
+
                 Console.WriteLine("Word:{0} | Value:{1}", pair.Key, pair.Value);    
             }
              
