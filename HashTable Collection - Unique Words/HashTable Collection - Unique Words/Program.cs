@@ -23,8 +23,18 @@ namespace UniqueWords
             // Loop through each item in the string array 'words'
             foreach (var item in words)
             {
-             h              
+                // If the hastable does not contain the item....
+                if (!hashTable.ContainsKey(item))
+                {
+                    // Add the item to the hashtable
+                    hashTable.Add(item, item);
+                }
+                
+
+
             }
+
+
         }
     }
 }
