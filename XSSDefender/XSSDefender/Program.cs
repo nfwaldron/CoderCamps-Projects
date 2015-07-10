@@ -15,13 +15,15 @@ namespace XSSDefender
             
             var htmlSanitizer = new Security();
 
-            var htmlStr = "<b>hello</b><Script>evil</Script>"; // Initialize string variable with string content
+            Console.WriteLine("Please Enter Content: ");
+            var htmlStr = Console.ReadLine();
+
+            // var htmlStr = "<b>hello</b><Script>evil</Script>"; // Initialize string variable with string content
+            
             var result = htmlSanitizer.SanitizeHTML(htmlStr); // Run test method to ensure proper functioning
             Console.WriteLine("Original String: {0}", htmlStr);
             Console.WriteLine("Sanitized String: {0}", result);
             Console.ReadLine();
-
-
         }
     }
 }

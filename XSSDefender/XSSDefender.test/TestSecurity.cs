@@ -15,12 +15,12 @@ namespace XSSDefender.test
 
             // Act - Use this section to perform the action that you are testing. Typically, you call a method in this section.
             
-            var htmlStr = "<b>hello</b><Script>evil</Script>"; // Initialize string variable with string content
+            var htmlStr = "<b>hello</b><script>evil</script>"; // Initialize string variable with string content
             var result = htmlSanitizer.SanitizeHTML(htmlStr); // Run test method to ensure proper functioning
             
             // Assert - Use this section to assert that a certain condition is true.
 
-            // Assert.AreNotEqual(result, "<b>hello</b>&lt;script&gt;evil&lt/script&gt;");
+            Assert.AreNotEqual(result, "<b>hello</b>&lt;script&gt;evil&lt/script&gt;");
             // Assert.AreEqual(result, "<b>hello</b>&lt;script&gt;evil&lt/script&gt;");
 
 

@@ -20,9 +20,6 @@ namespace XSSDefender
     {
         public string SanitizeHTML(string content)
         {
-            // Convert string content to lowercase.
-            content = content.ToLower();
-
             // Check to see if the incoming contant contains <script> or </script>.
             // These are unsafe HTML tags.
             var tag1 = "<script>";
