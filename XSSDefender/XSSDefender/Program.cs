@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,15 @@ namespace XSSDefender
     {
         static void Main(string[] args)
         {
-            var htmlStr = "<b>hello</b><Script>evil</Script>";
-            var security = new Security();
-            var result = security.SanitizeHTML(htmlStr);
-            Console.WriteLine(result);
+            
+            var htmlSanitizer = new Security();
+
+            var htmlStr = "<b>hello</b><Script>evil</Script>"; // Initialize string variable with string content
+            var result = htmlSanitizer.SanitizeHTML(htmlStr); // Run test method to ensure proper functioning
+            Console.WriteLine("Original String: {0}", htmlStr);
+            Console.WriteLine("Sanitized String: {0}", result);
             Console.ReadLine();
+
 
         }
     }

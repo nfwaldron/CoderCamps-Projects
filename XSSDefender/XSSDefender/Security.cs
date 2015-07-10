@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,18 +34,20 @@ namespace XSSDefender
 
                 // The Replace() Method replaces within a substring of an instance all occurances of a specified character
                 // with another character
-                sanitize.Replace("<", "&lt");
-                sanitize.Replace(">", "&gt");
+                sanitize.Replace("<script>", "&lt;script&gt;");
+                sanitize.Replace("</script>", "&lt/script&gt;");
 
                 // The 'sanitize' is an object of the class Stringbuilder. In order to return a string to the 
                 // Main method, perform the ToString() method on the object 'sanitize'.
-                return sanitize.ToString();
+                var result = sanitize.ToString();
+
+                //Assert Assumption that sanitize.ToString() in fact changed
+                Debug.Assert(result is string, "The variable 'result' is not a string");
+                return result;
             }
 
-            else
-            {
-                return content;
-            }
+            // If the content does not contain any harmful HTML tags, return the content unchanged 
+            return content;
 
         }
     }
