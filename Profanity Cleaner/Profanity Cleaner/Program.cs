@@ -58,7 +58,7 @@ namespace Profanity_Cleaner
                 }
             } 
 
-            var finalResult = String.Join(" ", result);
+            var finalResult = String.Join("", result);
 
             Console.WriteLine(finalResult);
             Console.ReadLine();

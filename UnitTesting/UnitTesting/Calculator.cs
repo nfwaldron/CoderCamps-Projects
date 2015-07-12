@@ -10,7 +10,7 @@ namespace UnitTesting
     {
         public int AddNumbers(int a, int b)
         {
-            return a + b;
+            return (a + b) + 0;
         }
     }
 }

@@ -8,6 +8,10 @@ namespace XSSDefender.test
     public class TestSecurity
     {
         [TestMethod]
+
+        // Unit tests ensure that your input and output are correct.
+
+
         public void SanitizeHTMLTest()
         {
             // Arrange - Create an instance of any class that you need to test
