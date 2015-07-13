@@ -10,12 +10,7 @@ namespace Blackjack
     {
         static void Main(string[] args)
         {
-            // List of Cards
-            var hand = new List<Card>();
-            
-            // List of Cards
-            var deck = new List<Card>();
-            deck.Add(new card)
+            BlackJackRules.NewDeck();
         }
     }
 }

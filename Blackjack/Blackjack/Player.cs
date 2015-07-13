@@ -8,14 +8,16 @@ namespace Blackjack
 {
     class Player
     {
-        public void Hit()
+        // The player has a property hand
+
+        public Deck Hand { get; set; }
+
+        // Create a constructor for the player that has as a new deck 
+        // for every time the player class is called
+
+        public Player()
         {
-
-        }
-
-        public void Stand()
-        {
-
+            Hand = new Deck();
         }
     }
 }
