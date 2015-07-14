@@ -46,9 +46,10 @@ namespace Profanity_Cleaner
             foreach (var item in words)
             {
                 //...We are going to check to see if that item matches with a key in our dictionary.
-                // If the..............
+                // If the item in the array corresponds to a key contained within our dictionary
                 if (profanityCleaner.ContainsKey(item))
                 {
+                    // THe value of the key will be pushed into the List of strings named 'result'
                     result.Add(profanityCleaner[item]);
                 }
 
